@@ -21,12 +21,12 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: 'aws-credentials',
+                        credentialsId: 'aws-terraform',
                         usernameVariable: 'AWS_ACCESS_KEY_ID',
                         passwordVariable: 'AWS_SECRET_ACCESS_KEY'
                     ),
                     string(
-                        credentialsId: 'aws-session-token',
+                        credentialsId: 'token-terraform',
                         variable: 'AWS_SESSION_TOKEN'
                     )
                 ]) {
@@ -44,12 +44,12 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: 'aws-credentials',
+                        credentialsId: 'aws-terraform',
                         usernameVariable: 'AWS_ACCESS_KEY_ID',
                         passwordVariable: 'AWS_SECRET_ACCESS_KEY'
                     ),
                     string(
-                        credentialsId: 'aws-session-token',
+                        credentialsId: 'token-terraform',
                         variable: 'AWS_SESSION_TOKEN'
                     )
                 ]) {
